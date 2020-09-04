@@ -125,6 +125,8 @@ public class Client extends JFrame implements ActionListener, KeyListener {
         outputWriter.close();
         output.close();
         socket.close();
+
+        System.exit(0);
     }
 
     @Override
