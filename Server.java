@@ -45,9 +45,8 @@ public class Server extends Thread {
             name = message = bufferReader.readLine();
 
             while(!"exit".equalsIgnoreCase(message) && message != null) {
-                message = bufferReader.readLine();
-                sendToAll(bufferWriter, message);
-                System.out.println(message);
+                    message = bufferReader.readLine();
+                    sendToAll(bufferWriter, message);
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -95,7 +95,7 @@ public class Client extends JFrame implements ActionListener, KeyListener {
             text.append(txtName.getText() + " disconnected \r\n");
         }else{
             bufferWriter.write(msg + "\r\n");
-            text.append( txtName.getText() + " says: " + txtMsg.getText() + "\r\n");
+            text.append( " You said: " + txtMsg.getText() + "\r\n");
         }
         bufferWriter.flush();
         txtMsg.setText("");
@@ -112,10 +112,10 @@ public class Client extends JFrame implements ActionListener, KeyListener {
 
         if(bfr.ready()){
             msg = bfr.readLine();
-        if(msg.equals("Exit"))
-            text.append("Server down! \r\n");
-        else
-            text.append(msg + "\r\n");
+            if(msg.equals("Exit"))
+                text.append("Server down! \r\n");
+            else
+                text.append(msg + "\r\n");
         }
     }
 
@@ -152,7 +152,6 @@ public class Client extends JFrame implements ActionListener, KeyListener {
             }
         }
     }
-    
 
     @Override
     public void keyReleased(KeyEvent arg0) {}
